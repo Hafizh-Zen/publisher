@@ -122,3 +122,36 @@ Mock Servers: Useful for simulating API responses when the backend isn’t ready
 These tools make Postman really helpful for both debugging and ensuring your APIs work as expected throughout development.
 
 #### Reflection Publisher-3
+
+1. Which version of the Observer Pattern is used in this tutorial?
+This tutorial applies the Push model of the Observer Pattern. In this version, the publisher (BambangShop) actively sends updates to each subscriber using HTTP POST requests that contain relevant information, like product changes or status updates.
+
+2. What are the benefits and drawbacks of the Pull model instead?
+The Pull model flips the flow—subscribers are the ones who ask the publisher for updates when they need them.
+
+Pros:
+
+Subscribers can control when they fetch data, which helps avoid unnecessary traffic.
+
+It reduces the workload on the publisher since it doesn’t have to notify everyone automatically.
+
+Cons:
+
+Subscribers must handle the logic to periodically check for updates, which adds complexity.
+
+Updates aren’t immediate—there’s always a delay depending on how often polling happens.
+
+It’s not ideal for real-time notifications, since important changes might be missed between checks.
+
+For this tutorial’s case, where immediate alerts are important, the Pull model wouldn’t work well.
+
+3. What’s the impact of not using multi-threading in the notification system?
+If multi-threading is skipped:
+
+Notifications go out one by one, so if one subscriber responds slowly, it holds up the others.
+
+The main thread gets blocked while sending out updates, which can slow down the whole app.
+
+As the number of subscribers grows, the delays stack up, making the system less efficient.
+
+Multi-threading solves this by allowing notifications to be sent in parallel, making the system faster and more scalable, especially when handling many subscribers at once.
