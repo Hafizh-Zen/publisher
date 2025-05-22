@@ -86,4 +86,39 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-2
 
+1. Why should “Service” and “Repository” be separated from the Model in the MVC pattern?
+Separating the Service and Repository layers from the Model follows the Single Responsibility Principle (SRP)—each part of the code should focus on just one job.
+
+The Repository takes care of data operations like saving, retrieving, and updating records. It hides the complexity of how data is stored or fetched.
+
+The Service layer handles business logic, keeping it separate from database operations.
+
+This kind of separation keeps your code cleaner and more manageable. It also makes it easier to test and update each layer independently without breaking the rest of the system.
+
+2. What happens if we only use the Model?
+If the Model is made to handle everything—from data access to business rules—it becomes too complex and tightly coupled.
+
+The Model would have to manage database interactions, validations, and application logic all at once, which makes it harder to read and maintain.
+
+Common logic like validation or sending notifications might get repeated in multiple places, leading to inconsistency.
+
+It also makes testing and scaling more difficult because everything is bundled together.
+
+Overall, skipping the Service and Repository layers makes the system less flexible and harder to maintain.
+
+3. How does Postman help with testing APIs?
+Postman is a useful tool for testing REST APIs because it lets you send requests and check responses without needing to build a full frontend.
+
+Key features include:
+
+Collections: You can group related endpoints and test them easily.
+
+Environment Variables: Switch between development and production setups without rewriting requests.
+
+Automated Tests: You can write scripts to validate responses and catch issues early.
+
+Mock Servers: Useful for simulating API responses when the backend isn’t ready.
+
+These tools make Postman really helpful for both debugging and ensuring your APIs work as expected throughout development.
+
 #### Reflection Publisher-3
